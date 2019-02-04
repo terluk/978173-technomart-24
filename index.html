@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>Техномарт</title>
+  <!--в head должны быть подключены шрифты -->
 </head>
 
 <body>
@@ -12,6 +13,7 @@
       <a class="header-logo" href="index.html">
         <img src="img/logo.svg" alt="Логотип интернет-магазина «Техномарт»">
       </a>
+      <!-- input должен быть обернут тегом form-->
       <input type="search" class="header-search" placeholder="Поиск:">
       <a class="header-bookmarks" href="bookmarks.html" title="Закладки">Закладки:0</a>
       <a class="header-cart cart-empty" href="cart.html" title="Корзина">Корзина:0</a>
@@ -22,11 +24,12 @@
       строительных материалов
       и инструментов для ремонта
     </h1>
-    <p class="header-contact">
+    <p class="header-contact"> <!-- переделать в div контейнер -->
+      <!--телефон это интерактивный элемент - тег a с аттрибутом href="tel:+12345" -->
       <span>
         +7 (812) 555-05-55
       </span>
-      г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8
+      г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 <!--обернуть в тег р -->
     </p>
     <ul class="user-navigation">
       <li class="login-link"><a href="login.html">Вход</a></li>
@@ -48,6 +51,7 @@
     <section class="advantages">
       <ul class="advantage-list">
         <li class="advantage-item new-item">
+          <!-- В каждом элеменнте списка есть еще и картинка, ее тоже нужно разметить (это может быть и svg вместо картинки) -->
           <h3>
             Материалы
           </h3>
@@ -111,13 +115,14 @@
           <a href="catalog.html?category=perforator">открыть каталог</a>
         </li>
       </ul>
-      <span class="allery-button-next">Вперед</span>
+      <span class="gallery-button-next">Вперед</span>
     </section>
     <section class="popular-products">
       <h2>
         Популярные товары:
       </h2>
       <a href="catalog.html?category=popular">все популярные товары</a>
+      <!-- h2 и <a> лучше обернуть в div-->
       <ul class="popular-product-list">
         <li class="popular-product-item">
           <img src="img/product/bfg-9000.png" alt="Перфоратор BOSCH BFG 9000">
@@ -178,6 +183,7 @@
         Популярные производители:
       </h2>
       <a href="brands.html">все производители</a>
+      <!--как и в предыдущем блоке лучше обернуть h2, <a> в div -->
       <ul class="popular-brand-list">
         <li class="popular-brand-item">
           <a href="brand-item.html">
@@ -226,9 +232,11 @@
       <p>
         Хороший интернет-магазин отличается от плохого не только ценами!
         <br>
+        <!-- используй тег br в самых крайних случаях (это как с !important та же история). Здесь спокойно можно разбить тект на 2 абзаца (используй 2 тега <p>)-->
         Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.
       </p>
       <ul class="service-button-list">
+        <!-- если делать этот блок через JS, то можно и так оставить. Если через CSS, то разметку переделай. это блок с табами. Как на css делать можешь тут почитать https://wcoder.github.io/notes/tabs-with-pure-css-->
         <li>
           <a href="delivery.html">Доставка</a>
         </li>
@@ -248,6 +256,7 @@
             Ведь мы неплохо заработаем, <br>
             поднимая его на ваш этаж!
           </p>
+          <!-- место под картинку нужно разметить-->
         </li>
         <li class="service-description-item">
           <h3>Гарантия</h3>
@@ -293,7 +302,9 @@
         Вы можете забрать товар сами, <br>
         заехав в наш офис:
       </p>
-      <a class="button-map" href="map.html"></a>
+      <a class="button-map" href="map.html">
+        <!--а где карта? Здесь долна быть хотя бы картинка/svg карты  -->
+      </a>
       <a class="button-write-us" href="write-us.html">Заблудились? Напишите нам!</a>
     </section>
   </main>
@@ -310,7 +321,7 @@
         <li><a href="contacts.html">Контакты</a></li>
       </ul>
       <p class="footer-contact">
-        г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br>
+        г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br><!-- убрать br и телефон я уже писал как оформлять-->
         +7 (812) 555-05-55
       </p>
       <ul class="footer-advantage-navigation">
@@ -322,16 +333,16 @@
     </div>
     <div>
       <p class="footer-copyright">
-        © 2010–2019 Компания «Техномарт»<br>
+        © 2010–2019 Компания «Техномарт»<br><!--!!!!!! br, можно разбить на 2 абзаца -->
         Все права защищены
       </p>
       <ul class="footer-social-list">
-        <li><a href="#">Вконтакте</a></li>
+        <li><a href="#">Вконтакте</a></li><!--здесь внутри ссылки должна быть размечена иконка соц сети (скорее всего это svg), а само название не нужно -->
         <li><a href="#">Фейсбук</a></li>
         <li><a href="#">Инстаграм</a></li>
       </ul>
-      <p class="footer-feedback">
-        Обратная связь:<br>
+      <p class="footer-feedback"><!-- блоки обратная связь, разработано, соц сети и копирайт это отдельные блоки div'ы внутрь которых помещаещь теги ul, p, a etc. Плохая практика размечать сетку тегами, не предназначающимися для этого-->
+        Обратная связь:<br><!--переделать br -->
         <a href="mailto:mail@htmlacademy.ru" title="mail@htmlacademy.ru">mail@htmlacademy.ru</a>
       </p>
       <p class="footer-developer">
@@ -343,7 +354,7 @@
   <section class="modal modal-write-us">
     <h2 class="visually-hidden">Напишите нам</h2>
     <!-- Здесь будет форма -->
-    <span class="modal-close">x</span>
+    <span class="modal-close">x</span><!--крестик можно застилизовать через css -->
   </section>
   <section class="modal modal-map">
     <h2 class="visually-hidden">Как до нас добраться</h2>
